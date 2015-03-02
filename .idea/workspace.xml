@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a5a8fd6-75f4-40d4-b0bc-a7a2c7c90e3d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Officer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Raider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/LCGen.java" afterPath="$PROJECT_DIR$/src/main/java/LCGen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="9a5a8fd6-75f4-40d4-b0bc-a7a2c7c90e3d" name="Default" comment="" />
     <ignored path="LCGen.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
