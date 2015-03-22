@@ -92,17 +92,15 @@ public class Raider {
                 candidates.add(raiders.get(j));
             }
         }
+        
         if (candidates.size() < 5) {
             for(int i = 0; i < raiderList.size(); i++) {
                 int raiderCount = raiderList.get(raiders.get(i));
                 if(raiderCount < lowestCount2) {
                     boolean isCandidate = false;
                     for(int j = 0; j < candidates.size(); j++){
-//                        System.out.println(raiders.get(i));
-//                        System.out.println(candidates.get(j));
                         if (raiders.get(i).equals(candidates.get(j))){
                             isCandidate = true;
-//                            System.out.println(raiders.get(i));
                             break;
                         }
                     }
