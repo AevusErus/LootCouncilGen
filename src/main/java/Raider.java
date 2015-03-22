@@ -42,7 +42,6 @@ public class Raider {
 
             for(int i = 0; i < names.size(); i++) {
                 String name = it.next().toString();
-                System.out.println(raiderList.get(name));
                 String fileLine = name+"|"+raiderList.get(name);
                 pw.printf( "%s" + "%n" ,fileLine);
             }
@@ -73,9 +72,10 @@ public class Raider {
     }
 
     //Return lowest participation list
-    public List<String> getLCCandidates () {
+    public static List<String> getLCCandidates () {
         List<String> candidates = new ArrayList<String>();
-        int lowestCount = 0;
+        int lowestCount = 10000;
+        int lowestCount2 = 10000;
         for(int i = 0; i < raiderList.size(); i++) {
             int raiderCount = raiderList.get(raiders.get(i));
             if(raiderCount < lowestCount) {
@@ -92,22 +92,34 @@ public class Raider {
                 candidates.add(raiders.get(j));
             }
         }
-
         if (candidates.size() < 5) {
-            lowestCount = 0;
             for(int i = 0; i < raiderList.size(); i++) {
                 int raiderCount = raiderList.get(raiders.get(i));
-                if(raiderCount < lowestCount) {
+                if(raiderCount < lowestCount2) {
+                    boolean isCandidate = false;
                     for(int j = 0; j < candidates.size(); j++){
+//                        System.out.println(raiders.get(i));
+//                        System.out.println(candidates.get(j));
                         if (raiders.get(i).equals(candidates.get(j))){
-                            continue;
-                        } else {
-                            lowestCount = raiderCount;
+                            isCandidate = true;
+//                            System.out.println(raiders.get(i));
+                            break;
                         }
+                    }
+                    if(!isCandidate) {
+                        lowestCount2 = raiderCount;
                     }
                 }
             }
         }
+
+        for(int j = 0; j < raiderList.size(); j++) {
+            int raiderCount = raiderList.get(raiders.get(j));
+            if(raiderCount == lowestCount2){
+                candidates.add(raiders.get(j));
+            }
+        }
+
         return candidates;
     }
 
