@@ -1,3 +1,6 @@
+import java.io.IOException;
+import java.util.HashMap;
+
 /**
  * Created by Chris on 2/28/15.
  */
@@ -16,5 +19,15 @@ public class LCGen {
         //pick raider participants, and their backups. Update their raider info.
         //pick officer participants, and their backups. Update their officer info.
         //print LC list with date.
+
+        try {
+            Raider.generateInitialRaiderList();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Raider.removeRaider("Lifefire");
+        Raider.saveRaidList();
+//        HashMap<String, Integer> theList = Raider.getRaiderList();
+        System.out.println(Raider.getRaiderList());
     }
 }
