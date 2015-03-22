@@ -52,23 +52,13 @@ public class LCGen {
         List<String> candidates, council;
         System.out.println("Generating LootCouncil list. Please stand by.");
 
-        //Instead of initilaizing the raider and officer lists inside the code,
-        //why not have it read from a list that can be updated by the code.
-
-        //initialize raider list if needed.
-        //initialize officer list if needed.
-        //get raider candidates
-        //get officer candidates
-        //pick raider participants, and their backups. Update their raider info.
-        //pick officer participants, and their backups. Update their officer info.
-        //print LC list with date.
-
         try {
             Raider.generateInitialRaiderList();
         } catch (IOException e) {
             e.printStackTrace();
         }
         candidates = Raider.getLCCandidates();
+        System.out.println(candidates.size());
         council = chooseCouncil(candidates);
         saveCouncilList(council);
         Raider.saveRaidList();
