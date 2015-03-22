@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a5a8fd6-75f4-40d4-b0bc-a7a2c7c90e3d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LootCouncilGen.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/LootCouncilGen/LCGen.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/LootCouncilGen/Raider.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/LCGen.java" afterPath="$PROJECT_DIR$/src/main/java/LCGen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Raider.java" afterPath="$PROJECT_DIR$/src/main/java/Raider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/councilList.txt" afterPath="$PROJECT_DIR$/councilList.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raidList.txt" afterPath="$PROJECT_DIR$/raidList.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LCGen.iws" />
     <ignored path=".idea/workspace.xml" />
