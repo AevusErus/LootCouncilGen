@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,10 +10,26 @@ public class LCGen {
 
     public static List<String> chooseCouncil(List<String> candidateList) {
         List<String> council = new ArrayList<String>();
+        int councilSize = 5;
 
         Random rand = new Random();
 
-        for (int i = 0; i < 5; i++) {
+        System.out.println(candidateList);
+
+        for(String candidate : candidateList){
+            if(councilSize > 0) {
+                boolean isFlagged = candidate.contains("-MUST SELECT");
+                if (isFlagged) {
+                    String name = candidate.substring(0, candidate.indexOf("|"));
+                    council.add(candidateList.get(randomIndex));
+                    Raider.updateRaider(candidateList.get(randomIndex));
+                    candidateList.remove(randomIndex);
+                    councilSize--;
+                }
+            }
+        }
+
+        for (int i = 0; i < councilSize; i++) {
             int randomIndex = rand.nextInt((candidateList.size() - 1) + 1);
             council.add(candidateList.get(randomIndex));
             Raider.updateRaider(candidateList.get(randomIndex));

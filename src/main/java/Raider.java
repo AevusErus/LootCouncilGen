@@ -89,7 +89,7 @@ public class Raider {
         for(int j = 0; j < raiderList.size(); j++) {
             int raiderCount = raiderList.get(raiders.get(j));
             if(raiderCount == lowestCount){
-                candidates.add(raiders.get(j));
+                candidates.add(raiders.get(j).concat("-MUST SELECT"));
             }
         }
         
