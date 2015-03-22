@@ -10,23 +10,28 @@ public class LCGen {
 
     public static List<String> chooseCouncil(List<String> candidateList) {
         List<String> council = new ArrayList<String>();
+        List<String> removeList = new ArrayList<String>();
         int councilSize = 5;
 
         Random rand = new Random();
 
         System.out.println(candidateList);
 
-        for(String candidate : candidateList){
+        for(int i = 0; i < candidateList.size(); i++){
             if(councilSize > 0) {
-                boolean isFlagged = candidate.contains("-MUST SELECT");
+                boolean isFlagged = candidateList.get(i).contains("MUSTSELECT");
                 if (isFlagged) {
-                    String name = candidate.substring(0, candidate.indexOf("|"));
-                    council.add(candidateList.get(randomIndex));
-                    Raider.updateRaider(candidateList.get(randomIndex));
-                    candidateList.remove(randomIndex);
+                    String name = candidateList.get(i).substring(0, candidateList.get(i).indexOf("-"));
+                    council.add(name);
+                    Raider.updateRaider(name);
+                    removeList.add(candidateList.get(i));
                     councilSize--;
                 }
             }
+        }
+
+        for(String toRemove : removeList) {
+            candidateList.remove(toRemove);
         }
 
         for (int i = 0; i < councilSize; i++) {
