@@ -17,21 +17,22 @@ public class LCGen {
 
         System.out.println(candidateList);
 
-        for(int i = 0; i < candidateList.size(); i++){
-            if(councilSize > 0) {
-                boolean isFlagged = candidateList.get(i).contains("MUSTSELECT");
-                if (isFlagged) {
-                    String name = candidateList.get(i).substring(0, candidateList.get(i).indexOf("-"));
-                    council.add(name);
-                    Raider.updateRaider(name);
-                    removeList.add(candidateList.get(i));
-                    councilSize--;
+        if(candidateList.get(0).contains("MUSTSELECT")) {
+            for (int i = 0; i < candidateList.size(); i++) {
+                if (councilSize > 0) {
+                    boolean isFlagged = candidateList.get(i).contains("MUSTSELECT");
+                    if (isFlagged) {
+                        String name = candidateList.get(i).substring(0, candidateList.get(i).indexOf("-"));
+                        council.add(name);
+                        Raider.updateRaider(name);
+                        removeList.add(candidateList.get(i));
+                        councilSize--;
+                    }
                 }
             }
-        }
-
-        for(String toRemove : removeList) {
-            candidateList.remove(toRemove);
+            for (String toRemove : removeList) {
+                candidateList.remove(toRemove);
+            }
         }
 
         for (int i = 0; i < councilSize; i++) {
