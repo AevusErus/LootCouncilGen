@@ -44,7 +44,7 @@ public class LCGen {
         return council;
     }
 
-    public static void saveCouncilList(List<String> councilList) {
+    public static void saveCouncilList(List<String> councilList, List<String> candidateList) {
         String path = "/Users/Chris/Documents/batcave/LootCouncilGen/councilList.txt";
 
         try {
@@ -56,13 +56,19 @@ public class LCGen {
             pw.printf( "%s" + "%n" ,today);
 
             for(int i = 0; i < councilList.size(); i++) {
-                String name = councilList.get(i);
-                String fileLine = name;
+                String fileLine = councilList.get(i);
                 pw.printf( "%s" + "%n" ,fileLine);
             }
 
+            pw.printf( "%n" + "%s" + "%n" ,"Candidate List:");
+
+            for(int i = 0; i < candidateList.size(); i++) {
+                String fileLine2 = candidateList.get(i);
+                pw.printf( "%s" + ", " ,fileLine2);
+            }
+
             String endSegment = "--------------------";
-            pw.printf( "%s" + "%n" ,endSegment);
+            pw.printf( "%n" + "%s" + "%n" ,endSegment);
             pw.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -82,7 +88,7 @@ public class LCGen {
         candidates = Raider.getLCCandidates();
         System.out.println(candidates.size());
         council = chooseCouncil(candidates);
-        saveCouncilList(council);
+        saveCouncilList(council, candidates);
         Raider.saveRaidList();
         System.out.println(Raider.getRaiderList());
     }

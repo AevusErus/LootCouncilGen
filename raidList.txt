@@ -10,8 +10,8 @@ Istaid|2
 Oronous|3
 Valias|2
 Isabellea|3
-Garduun|2
-Ulqquiorra|3
-Hariyama|2
+Garduun|3
+Ulqquiorra|2
+Hariyama|3
 Shadowsstorm|3
-Bluewind|3
+Bluewind|2
