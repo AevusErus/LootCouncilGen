@@ -2,7 +2,7 @@ Abom|2
 Messiahcmplx|2
 Biagio|3
 Dreadguise|3
-Zanidra|2
+Zanidra|1
 Seduced|2
 Vitruv|2
 Clinks|2
@@ -14,4 +14,4 @@ Garduun|3
 Ulqquiorra|2
 Hariyama|3
 Shadowsstorm|3
-Bluewind|2
+Bluewind|3
