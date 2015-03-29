@@ -46,6 +46,8 @@ public class LCGen {
 
     public static void saveCouncilList(List<String> councilList, List<String> candidateList) {
         String path = "/Users/Chris/Documents/batcave/LootCouncilGen/councilList.txt";
+        Random rand = new Random();
+        List<String> candDub = new ArrayList<String>();
 
         try {
             FileWriter fw = new FileWriter(path,true
@@ -62,9 +64,15 @@ public class LCGen {
 
             pw.printf( "%n" + "%s" + "%n" ,"Candidate List:");
 
-            for(int i = 0; i < candidateList.size(); i++) {
-                String fileLine2 = candidateList.get(i);
-                pw.printf( "%s" + ", " ,fileLine2);
+            int initialCandidateSize = candidateList.size();
+            for(int i = 0; i < initialCandidateSize; i++) {
+                int randomIndex = rand.nextInt((candidateList.size() - 1) + 1);
+                candDub.add(candidateList.get(randomIndex));
+                candidateList.remove(randomIndex);
+            }
+
+            for (String fileLine2 : candDub) {
+                pw.printf("%s" + ", ", fileLine2);
             }
 
             String endSegment = "--------------------";
