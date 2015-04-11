@@ -8,3 +8,23 @@ Hariyama
 Candidate List:
 Abom, Messiahcmplx, Seduced, Istaid, Valias, Ulqquiorra, Bluewind, 
 --------------------
+Tue Mar 31 18:38:19 MDT 2015
+Zanidra
+Seduced
+Ulqquiorra
+Abom - Replaced: Messiahcmplx (Absent)
+Clinks - Replaced: Istaid (To avoid duplication)
+
+Candidate List:
+Istaid, Valias, Vitruv, Messiahcmplx, 
+--------------------
+Tue Apr 07 19:48:23 MDT 2015
+Zanidra
+Clinks
+Valias
+Abom
+Vitruv - Replaced: Biagio (Absent)
+
+Candidate List:
+
+--------------------
