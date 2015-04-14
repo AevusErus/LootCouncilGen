@@ -4,7 +4,7 @@ Biagio|4
 Dreadguise|3
 Zanidra|3
 Seduced|3
-Vitruv|2
+Vitruv|3
 Clinks|3
 Istaid|3
 Oronous|3
