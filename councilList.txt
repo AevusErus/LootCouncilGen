@@ -41,7 +41,7 @@ Valias, Messiahcmplx, Shadowsstorm, Istaid, Abom, Oronous, Vitruv, Dreadguise, C
 Tue Apr 21 17:15:20 MDT 2015
 Dreadguise
 Oronous
-Abom
+Abom  - Replaced: Shadowsstorm
 Clinks
 Istaid
 

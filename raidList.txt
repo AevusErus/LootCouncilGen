@@ -1,4 +1,4 @@
-Abom|4
+Abom|3
 Messiahcmplx|3
 Biagio|4
 Dreadguise|4
@@ -13,5 +13,5 @@ Isabellea|4
 Garduun|3
 Ulqquiorra|4
 Hariyama|4
-Shadowsstorm|3
+Shadowsstorm|4
 Bluewind|4
