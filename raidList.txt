@@ -1,4 +1,4 @@
-Abom|4
+Abom|3
 Messiahcmplx|4
 Biagio|4
 Dreadguise|5
@@ -7,7 +7,7 @@ Seduced|4
 Vitruv|4
 Clinks|4
 Istaid|4
-Oronous|5
+Oronous|4
 Valias|4
 Isabellea|5
 Garduun|5
