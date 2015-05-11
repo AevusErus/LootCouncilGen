@@ -1,6 +1,7 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -14,8 +15,6 @@ public class LCGen {
         int councilSize = 5;
 
         Random rand = new Random();
-
-        System.out.println(candidateList);
 
         if(candidateList.get(0).contains("MUSTSELECT")) {
             for (int i = 0; i < candidateList.size(); i++) {
@@ -55,7 +54,16 @@ public class LCGen {
             PrintWriter pw = new PrintWriter(fw);
 
             Date today = new Date();
-            pw.printf( "%s" + "%n" ,today);
+            Calendar c = Calendar.getInstance();
+            SimpleDateFormat format1 = new SimpleDateFormat("MM-dd-yyyy");
+
+            if(today.getDay() > 2 || today.getDay() < 2) {
+                c.set((today.getYear()+1900), today.getMonth(), today.getDate());
+                c.set(Calendar.DAY_OF_WEEK, Calendar.TUESDAY);
+                pw.printf("%s" + "%n", "Raid Week of " + format1.format(c.getTime()));
+            } else {
+                pw.printf("%s" + "%n", "Raid Week of " + format1.format(today));
+            }
 
             for(int i = 0; i < councilList.size(); i++) {
                 String fileLine = councilList.get(i);
@@ -93,10 +101,15 @@ public class LCGen {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println("***** Candidate List *****");
         candidates = Raider.getLCCandidates();
-        System.out.println(candidates.size());
+        System.out.println(candidates.size() + " candidates");
+        System.out.println(candidates);
+        System.out.println("***** Council List *****");
         council = chooseCouncil(candidates);
         saveCouncilList(council, candidates);
+        System.out.println(council);
+        System.out.println("***** Raider List *****");
         Raider.saveRaidList();
         System.out.println(Raider.getRaiderList());
     }
