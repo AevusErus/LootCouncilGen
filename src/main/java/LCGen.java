@@ -60,9 +60,9 @@ public class LCGen {
             if(today.getDay() > 2 || today.getDay() < 2) {
                 c.set((today.getYear()+1900), today.getMonth(), today.getDate());
                 c.set(Calendar.DAY_OF_WEEK, Calendar.TUESDAY);
-                pw.printf("%s" + "%n", "Raid Week of " + format1.format(c.getTime()));
+                pw.printf("%s" + "%n", "Loot Council for the Raid Week of " + format1.format(c.getTime()));
             } else {
-                pw.printf("%s" + "%n", "Raid Week of " + format1.format(today));
+                pw.printf("%s" + "%n", "Loot Council for the Raid Week of " + format1.format(today));
             }
 
             for(int i = 0; i < councilList.size(); i++) {
@@ -101,14 +101,17 @@ public class LCGen {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println();
         System.out.println("***** Candidate List *****");
         candidates = Raider.getLCCandidates();
         System.out.println(candidates.size() + " candidates");
         System.out.println(candidates);
+        System.out.println();
         System.out.println("***** Council List *****");
         council = chooseCouncil(candidates);
         saveCouncilList(council, candidates);
         System.out.println(council);
+        System.out.println();
         System.out.println("***** Raider List *****");
         Raider.saveRaidList();
         System.out.println(Raider.getRaiderList());
