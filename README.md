@@ -15,11 +15,11 @@ In the case a council member needs to be replaced then the next person on the ca
 And that's how this script works! There are still bugs and things being worked out so please be patient with us. If you notice any issues, feel free to create a github issue here so that it can be addressed ASAP! They all get reported to our guild's Slack and Lifefire will see it almost immediately.
 
 ### Known Bugs
-1) Not taking into account previous council history
+1. Not taking into account previous council history
 	* Theoretically this shouldn't matter, but with the way our team started with an odd count for some people, it has become an issue and probably would have developed sooner or later anyway. The problem is basically trying to avoid having anyone on the council twice in a row, there should be at least a break of 1 week between them participating. This is to avoid too much carry over into the next council from week-to-week.
-2) Not taking into account relations of guild members
+2. Not taking into account relations of guild members
 	* Our guild has a lot of brothers, sisters, cousins, couples, etc. and it is a rule of the council that if someone you're related to is up for an item you're omitted from voting. Thus, we should avoid pairing them up on the council in the case that a majority of the council would have to omitted.
-3) Not easy for everyone to run
+3. Not easy for everyone to run
 	* Right now the list is very much programmer friendly, but not friendly to a wider range of our raiding team. Thus, it is a goal to eventually have this more accessible for people to run on their local machines.
 
 ### How To Install
