@@ -12,7 +12,9 @@ public class Raider {
     private static HashMap<String, Integer> raiderList = new HashMap<String, Integer>();
     private static List<String> raiders = new ArrayList<String>();
     private static String path = "/Users/Chris/Documents/batcave/LootCouncilGen/raidList.txt";
+    private static String pathCurrent = "/Users/Chris/Documents/batcave/LootCouncilGen/currentCouncil.txt";
     private static List<String> exemptionList = new ArrayList<String>();
+    private static List<String> previousCouncilList = new ArrayList<String>();
     private static HashMap<String, String> relationMap = new HashMap<String, String>();
 
 
@@ -86,6 +88,23 @@ public class Raider {
         return candidates;
     }
 
+    //Get list of the previous week's council members
+    public static List<String> getPreviousCouncilList() throws IOException {
+        File raidListFile = new File(pathCurrent);
+        List<String> previousCouncil = new ArrayList<String>();
+        if (raidListFile.isFile()) {
+            FileReader fr = new FileReader(pathCurrent);
+            BufferedReader br = new BufferedReader(fr);
+
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                previousCouncil.add(line);
+            }
+        }
+        return previousCouncil;
+    }
+
 //    SETTERS
 
     //    Update a raider's participation count
@@ -112,9 +131,11 @@ public class Raider {
 
 //    GENERATE FUNCTIONS
 
-    //    Generate intial raiderList with given raiders from raidList.txt
+    //    Generate initial raiderList with given raiders from raidList.txt
     public static void generateInitialRaiderList() throws IOException {
         File raidListFile = new File(path);
+        List<String> previousCouncil = getPreviousCouncilList();
+        System.out.println(previousCouncil);
         if (raidListFile.isFile()) {
             FileReader fr = new FileReader(path);
             BufferedReader br = new BufferedReader(fr);
@@ -129,14 +150,22 @@ public class Raider {
                     String username1 = line.substring(0, line.indexOf('|'));
                     String username2 = line.substring(line.indexOf(':')+1, line.length());
                     relationMap.put(username1, username2);
-                    int count = Integer.parseInt(line.substring(line.indexOf('|') + 1, line.indexOf(':')-1));
-                    raiders.add(username1);
-                    raiderList.put(username1, count);
+                    if(!previousCouncil.contains(username1)) {
+                        int count = Integer.parseInt(line.substring(line.indexOf('|') + 1, line.indexOf(':') - 1));
+                        raiders.add(username1);
+                        raiderList.put(username1, count);
+                    } else {
+                        previousCouncilList.add(line);
+                    }
                 } else {
                     String username = line.substring(0, line.indexOf('|'));
-                    int count = Integer.parseInt(line.substring(line.indexOf('|') + 1));
-                    raiders.add(username);
-                    raiderList.put(username, count);
+                    if(!previousCouncil.contains(username)) {
+                        int count = Integer.parseInt(line.substring(line.indexOf('|') + 1));
+                        raiders.add(username);
+                        raiderList.put(username, count);
+                    } else {
+                        previousCouncilList.add(line);
+                    }
                 }
             }
         }
@@ -162,6 +191,10 @@ public class Raider {
                     fileLine = name + "|" + raiderList.get(name);
                 }
                 pw.printf("%s" + "%n", fileLine);
+            }
+            //Save names of the previous council members to add back into rotation
+            for(int i = 0; i < previousCouncilList.size(); i++){
+                pw.printf("%s" + "%n", previousCouncilList.get(i));
             }
             //Save names of exempt raiders
             for (int i = 0; i < exemptionList.size(); i++){

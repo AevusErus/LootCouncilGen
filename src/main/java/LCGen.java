@@ -73,13 +73,13 @@ public class LCGen {
 
 //    Function that saves the generated council list to the councilList.txt file.
     public static void saveCouncilList(List<String> councilList, List<String> candidateList) {
-        String path = "/Users/Chris/Documents/batcave/LootCouncilGen/councilList.txt";
+        String pathList = "/Users/Chris/Documents/batcave/LootCouncilGen/councilList.txt";
+        String pathCurrent = "/Users/Chris/Documents/batcave/LootCouncilGen/currentCouncil.txt";
         Random rand = new Random();
         List<String> candDub = new ArrayList<String>();
 
         try {
-            FileWriter fw = new FileWriter(path,true
-            );
+            FileWriter fw = new FileWriter(pathList,true);
             PrintWriter pw = new PrintWriter(fw);
 
             Date today = new Date();
@@ -115,6 +115,19 @@ public class LCGen {
             String endSegment = "--------------------";
             pw.printf( "%n" + "%s" + "%n" ,endSegment);
             pw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            FileWriter fw2 = new FileWriter(pathCurrent,false);
+            PrintWriter pw2 = new PrintWriter(fw2);
+
+            for(int i = 0; i < councilList.size(); i++) {
+                String fileLine = councilList.get(i);
+                pw2.printf( "%s" + "%n" ,fileLine);
+            }
+            pw2.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
