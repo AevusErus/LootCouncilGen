@@ -114,7 +114,6 @@ public class Raider {
 
     //    Generate intial raiderList with given raiders from raidList.txt
     public static void generateInitialRaiderList() throws IOException {
-        System.out.println("Generate raider list");
         File raidListFile = new File(path);
         if (raidListFile.isFile()) {
             FileReader fr = new FileReader(path);
@@ -141,8 +140,6 @@ public class Raider {
                 }
             }
         }
-
-        System.out.println(relationMap);
     }
 //    Save Function
 
@@ -157,7 +154,13 @@ public class Raider {
             //Save names of non-exempt raiders
             for (int i = 0; i < names.size(); i++) {
                 String name = it.next().toString();
-                String fileLine = name + "|" + raiderList.get(name);
+                String fileLine;
+                if(relationMap.containsKey(name)){
+                    fileLine = name + "|" + raiderList.get(name) + " :" + relationMap.get(name);
+
+                } else {
+                    fileLine = name + "|" + raiderList.get(name);
+                }
                 pw.printf("%s" + "%n", fileLine);
             }
             //Save names of exempt raiders

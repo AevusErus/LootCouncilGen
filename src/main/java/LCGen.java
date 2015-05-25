@@ -19,6 +19,7 @@ public class LCGen {
             String raider = council.get(i);
             if(relationMap.containsKey(raider)){
                 if(council.contains(relationMap.get(raider))){
+                    System.out.println("RELATION FOUND!!!");
                     council.remove(relationMap.get(raider));
                     int randomIndex = rand.nextInt((candidateList.size() - 1) + 1);
                     council.add(candidateList.get(randomIndex));

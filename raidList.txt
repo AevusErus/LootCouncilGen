@@ -2,8 +2,8 @@ Abom|5
 Messiahcmplx|4
 Biagio|5
 Dreadguise|5 :Shadowsstorm
-*Zanidra|4
-*Seduced|5
+*Zanidra|4 :Seduced
+*Seduced|5 :Zanidra
 Vitruv|5
 Clinks|5 :Bluewind
 Istaid|5
