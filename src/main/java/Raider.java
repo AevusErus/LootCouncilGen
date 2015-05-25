@@ -13,6 +13,7 @@ public class Raider {
     private static List<String> raiders = new ArrayList<String>();
     private static String path = "/Users/Chris/Documents/batcave/LootCouncilGen/raidList.txt";
     private static List<String> exemptionList = new ArrayList<String>();
+    private static HashMap<String, String> relationMap = new HashMap<String, String>();
 
 
 //    GETTERS
@@ -20,6 +21,11 @@ public class Raider {
     //    Return raiderList
     public static HashMap<String, Integer> getRaiderList() {
         return raiderList;
+    }
+
+    //Return relationMap
+    public static HashMap<String, String> getRelationMap() {
+        return relationMap;
     }
 
     //Return candidateList with lowest participation members.
@@ -87,6 +93,13 @@ public class Raider {
         raiderList.put(raider, raiderList.get(raider) + 1);
     }
 
+    //Update participation count for all the raiders on the council
+    public static void updateRaiders(List<String> council){
+        for (int i = 0; i < council.size(); i++){
+            updateRaider(council.get(i));
+        }
+    }
+
     //    Add new raider
     public static void addRaider(String raider) {
         raiderList.put(raider, 0);
@@ -113,6 +126,13 @@ public class Raider {
                 if (line.contains("*")) {
                     exemptionList.add(line);
                     continue;
+                } else if (line.contains(":")) {
+                    String username1 = line.substring(0, line.indexOf('|'));
+                    String username2 = line.substring(line.indexOf(':')+1, line.length());
+                    relationMap.put(username1, username2);
+                    int count = Integer.parseInt(line.substring(line.indexOf('|') + 1));
+                    raiders.add(username1);
+                    raiderList.put(username1, count);
                 } else {
                     String username = line.substring(0, line.indexOf('|'));
                     int count = Integer.parseInt(line.substring(line.indexOf('|') + 1));
@@ -122,7 +142,7 @@ public class Raider {
             }
         }
 
-        System.out.println(raiders);
+        System.out.println(relationMap);
     }
 //    Save Function
 

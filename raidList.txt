@@ -1,17 +1,17 @@
 Abom|5
 Messiahcmplx|4
 Biagio|5
-Dreadguise|5
+Dreadguise|5 :Shadowsstorm
 *Zanidra|4
 *Seduced|5
 Vitruv|5
-Clinks|5
+Clinks|5 :Bluewind
 Istaid|5
 Oronous|5
 Valias|4
 Isabellea|5
-Garduun|5
+Garduun|5 :Hariyama
 Ulqquiorra|5
-Hariyama|5
-Shadowsstorm|5
-Bluewind|5
+Hariyama|5 :Garduun
+Shadowsstorm|5 :Dreaduguise
+Bluewind|5 :Clinks

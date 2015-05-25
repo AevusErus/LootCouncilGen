@@ -9,6 +9,25 @@ import java.util.*;
  */
 public class LCGen {
 
+
+    //Function that checks to make sure non of the council members are related
+    public static List<String> checkRelations(List<String> council, List<String> candidateList){
+        HashMap<String, String> relationMap = Raider.getRelationMap();
+        Random rand = new Random();
+
+        for(int i = 0; i < council.size(); i++){
+            String raider = council.get(i);
+            if(relationMap.containsKey(raider)){
+                if(council.contains(relationMap.get(raider))){
+                    council.remove(relationMap.get(raider));
+                    int randomIndex = rand.nextInt((candidateList.size() - 1) + 1);
+                    council.add(candidateList.get(randomIndex));
+                    candidateList.remove(randomIndex);
+                }
+            }
+        }
+        return council;
+    }
 //    Function that selects the council members from the candidateList.
     public static List<String> chooseCouncil(List<String> candidateList) {
         List<String> council = new ArrayList<String>();
@@ -41,9 +60,13 @@ public class LCGen {
         for (int i = 0; i < councilSize; i++) {
             int randomIndex = rand.nextInt((candidateList.size() - 1) + 1);
             council.add(candidateList.get(randomIndex));
-            Raider.updateRaider(candidateList.get(randomIndex));
             candidateList.remove(randomIndex);
         }
+        //Check the council list for relations that should be removed
+        council = checkRelations(council, candidateList);
+        //Update the participation count for all the council members
+        Raider.updateRaiders(council);
+        
         return council;
     }
 
