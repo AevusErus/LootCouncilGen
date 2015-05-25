@@ -9,6 +9,7 @@ import java.util.*;
  */
 public class LCGen {
 
+//    Function that selects the council members from the candidateList.
     public static List<String> chooseCouncil(List<String> candidateList) {
         List<String> council = new ArrayList<String>();
         List<String> removeList = new ArrayList<String>();
@@ -16,6 +17,7 @@ public class LCGen {
 
         Random rand = new Random();
 
+//      Add the names for the council list that MUST be included.
         if(candidateList.get(0).contains("MUSTSELECT")) {
             for (int i = 0; i < candidateList.size(); i++) {
                 if (councilSize > 0) {
@@ -29,11 +31,13 @@ public class LCGen {
                     }
                 }
             }
+//            Remove selected council names from the candidate list so that they don't throw off the random selection.
             for (String toRemove : removeList) {
                 candidateList.remove(toRemove);
             }
         }
 
+//        Select random candidates to fill the remaining council seats.
         for (int i = 0; i < councilSize; i++) {
             int randomIndex = rand.nextInt((candidateList.size() - 1) + 1);
             council.add(candidateList.get(randomIndex));
@@ -43,6 +47,7 @@ public class LCGen {
         return council;
     }
 
+//    Function that saves the generated council list to the councilList.txt file.
     public static void saveCouncilList(List<String> councilList, List<String> candidateList) {
         String path = "/Users/Chris/Documents/batcave/LootCouncilGen/councilList.txt";
         Random rand = new Random();
@@ -91,6 +96,7 @@ public class LCGen {
         }
     }
 
+//    Main function that runs to generate the council list.
     public static void main(String args[]){
 
         List<String> candidates, council;
