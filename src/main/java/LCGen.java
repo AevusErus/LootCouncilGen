@@ -66,7 +66,7 @@ public class LCGen {
         council = checkRelations(council, candidateList);
         //Update the participation count for all the council members
         Raider.updateRaiders(council);
-        
+
         return council;
     }
 

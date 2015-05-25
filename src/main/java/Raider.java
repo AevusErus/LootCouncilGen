@@ -130,7 +130,7 @@ public class Raider {
                     String username1 = line.substring(0, line.indexOf('|'));
                     String username2 = line.substring(line.indexOf(':')+1, line.length());
                     relationMap.put(username1, username2);
-                    int count = Integer.parseInt(line.substring(line.indexOf('|') + 1));
+                    int count = Integer.parseInt(line.substring(line.indexOf('|') + 1, line.indexOf(':')-1));
                     raiders.add(username1);
                     raiderList.put(username1, count);
                 } else {
