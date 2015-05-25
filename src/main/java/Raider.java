@@ -12,7 +12,7 @@ public class Raider {
     private static HashMap<String, Integer> raiderList = new HashMap<String, Integer>();
     private static List<String> raiders = new ArrayList<String>();
     private static String path = "/Users/Chris/Documents/batcave/LootCouncilGen/raidList.txt";
-    private static List<String> exemptionList = new ArrayList<String>(Arrays.asList("Seduced", "Zanidra"));
+    private static List<String> exemptionList = new ArrayList<String>();
 
 
 //    GETTERS
@@ -110,23 +110,19 @@ public class Raider {
             String line;
 
             while ((line = br.readLine()) != null) {
-                String username = line.substring(0, line.indexOf('|'));
-                int count = Integer.parseInt(line.substring(line.indexOf('|') + 1));
-                raiders.add(username);
-                raiderList.put(username, count);
+                if (line.contains("*")) {
+                    exemptionList.add(line);
+                    continue;
+                } else {
+                    String username = line.substring(0, line.indexOf('|'));
+                    int count = Integer.parseInt(line.substring(line.indexOf('|') + 1));
+                    raiders.add(username);
+                    raiderList.put(username, count);
+                }
             }
         }
 
-        //Remove raiders from the initial list that are considered exempt from being on the council
-        for(int i = 0; i < exemptionList.size(); i++) {
-            String exemptRaider = exemptionList.get(i);
-            if(raiders.contains(exemptRaider)){
-                raiders.remove(exemptRaider);
-            }
-            if(raiderList.containsKey(exemptRaider)){
-                removeRaider(exemptRaider);
-            }
-        }
+        System.out.println(raiders);
     }
 //    Save Function
 
@@ -138,10 +134,15 @@ public class Raider {
             Set<String> names = raiderList.keySet();
             Iterator it = names.iterator();
 
+            //Save names of non-exempt raiders
             for (int i = 0; i < names.size(); i++) {
                 String name = it.next().toString();
                 String fileLine = name + "|" + raiderList.get(name);
                 pw.printf("%s" + "%n", fileLine);
+            }
+            //Save names of exempt raiders
+            for (int i = 0; i < exemptionList.size(); i++){
+                pw.printf("%s" + "%n", exemptionList.get(i));
             }
             pw.close();
         } catch (IOException e) {
