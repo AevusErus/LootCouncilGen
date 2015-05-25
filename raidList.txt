@@ -13,5 +13,5 @@ Isabellea|5
 Garduun|5 :Hariyama
 Ulqquiorra|5
 Hariyama|5 :Garduun
-Shadowsstorm|5 :Dreaduguise
+*Shadowsstorm|5 :Dreaduguise
 Bluewind|5 :Clinks
