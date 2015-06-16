@@ -14,4 +14,4 @@ Vitruv|6
 Bluewind|6 :Clinks
 *Zanidra|4 :Seduced
 *Seduced|5 :Zanidra
-*Shadowsstorm|5 :Dreaduguise
+Shadowsstorm|5 :Dreaduguise
