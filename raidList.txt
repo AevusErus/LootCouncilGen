@@ -1,17 +1,18 @@
-Valias|6
-Messiahcmplx|7
-Garduun|6 :Hariyama
-Ulqquiorra|6
-Hariyama|7 :Garduun
-Dreadguise|6 :Shadowsstorm
-Biagio|7
-Shadowsstorm|7 :Dreaduguise
-Vitruv|7
-Bluewind|6 :Clinks
-Abom|7
-Isabellea|7
-Clinks|7 :Bluewind
-Istaid|7
-Oronous|7
-*Zanidra|4 :Seduced
-*Seduced|5 :Zanidra
+Valias|0
+Abom|0
+Marazhan|1 :Microjackson
+Isabellea|1
+Garduun|1 :Hariyama
+Ulqquiorra|1
+Dreadguise|0 :Shadowsstorm
+Bluewind|1 :Clinks
+Clinks|0 :Bluewind
+Istaid|0
+Oronous|0
+Messiahcmplx|0
+Hariyama|0 :Garduun
+Biagio|0
+Shadowsstorm|0 :Dreaduguise
+Vitruv|0
+*Zanidra|0 :Seduced
+*Seduced|0 :Zanidra

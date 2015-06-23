@@ -1,0 +1,17 @@
+Valias|6
+Messiahcmplx|7
+Garduun|6 :Hariyama
+Ulqquiorra|6
+Hariyama|7 :Garduun
+Dreadguise|6 :Shadowsstorm
+Biagio|7
+Shadowsstorm|7 :Dreaduguise
+Vitruv|7
+Bluewind|6 :Clinks
+Abom|7
+Isabellea|7
+Clinks|7 :Bluewind
+Istaid|7
+Oronous|7
+*Zanidra|4 :Seduced
+*Seduced|5 :Zanidra
