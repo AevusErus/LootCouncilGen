@@ -10,8 +10,8 @@ Oronous|2
 Valias|3
 Hariyama|3 :Garduun
 Shadowsstorm|3 :Dreaduguise
-Clinks|3 :Bluewind
-Istaid|3
+*Clinks|3 :Bluewind
+*Istaid|3
 *Marazhan|1 :Microjackson
 *Abom|2
 *Zanidra|0 :Seduced
