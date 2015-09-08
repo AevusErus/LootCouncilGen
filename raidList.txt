@@ -1,15 +1,15 @@
-Isabellea|4
-Garduun|4 :Hariyama
-Hariyama|3 :Garduun
-Shadowsstorm|4 :Dreaduguise
-Biagio|4
-Dreadguise|3 :Shadowsstorm
-Bluewind|4 :Clinks
 Valias|4
 Messiahcmplx|4
-Ulqquiorra|4
-Vitruv|4
-Oronous|4
+Ulqquiorra|5
+Hariyama|5 :Garduun
+Dreadguise|5 :Shadowsstorm
+Vitruv|5
+Oronous|5
+Isabellea|4
+Garduun|4 :Hariyama
+Shadowsstorm|4 :Dreaduguise
+Biagio|4
+Bluewind|4 :Clinks
 *Clinks|3 :Bluewind
 *Istaid|3
 *Marazhan|1 :Microjackson
