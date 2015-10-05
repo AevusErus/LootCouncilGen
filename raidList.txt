@@ -1,16 +1,16 @@
-Valias|6
-Abom|6
-Messiahcmplx|5
-Isabellea|6
-Ulqquiorra|6
-Garduun|5 :Hariyama
-Dreadguise|6 :Shadowsstorm
-Shadowsstorm|5 :Dreaduguise
+Messiahcmplx|7
+Garduun|7 :Hariyama
 Hariyama|6 :Garduun
+Shadowsstorm|7 :Dreaduguise
 Biagio|6
 Vitruv|6
-Bluewind|6 :Clinks
-Oronous|6
+Bluewind|7 :Clinks
+Oronous|7
+Valias|6
+Abom|6
+Isabellea|6
+Ulqquiorra|6
+Dreadguise|6 :Shadowsstorm
 *Clinks|3 :Bluewind
 *Istaid|3
 *Marazhan|1 :Microjackson
